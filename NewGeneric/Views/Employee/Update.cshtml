@@ -1,0 +1,45 @@
+﻿@model NewGeneric.Models.EmployeeViewModel
+
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h1>Update</h1>
+
+<h4>EmployeeViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Employee" asp-action="Update" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="EId" class="control-label"></label>
+                <input asp-for="EId" class="form-control" readonly />
+                <span asp-validation-for="EId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EName" class="control-label"></label>
+                <input asp-for="EName" class="form-control" />
+                <span asp-validation-for="EName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ESalary" class="control-label"></label>
+                <input asp-for="ESalary" class="form-control" />
+                <span asp-validation-for="ESalary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EDepartmentId" class="control-label"></label>
+                <input asp-for="EDepartmentId" class="form-control" />
+                <span asp-validation-for="EDepartmentId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<NewGeneric.Models.EmployeeViewModel>
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<table class="table table-bordered table-light table-hover">
+    <thead>
+        <tr>
+            <th class="text-center">Id</th>
+            <th class="text-center">Name</th>
+            <th class="text-center">Salary</th>
+            <th class="text-center">Department Name</th>
+            <th class="text-center">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var list in Model)
+        {
+        <tr>
+            <td class="text-center">
+                @list.EId
+            </td>
+            <td class="text-center">
+                @list.EName
+            </td>
+            <td class="text-center">
+                @list.ESalary
+            </td>
+            <td class="text-center">
+                @list.EDepartmentName
+            </td>
+            <td class="text-center">
+                <a href="Update/@list.EId">Update</a> | <a href="Delete/@list.EId">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

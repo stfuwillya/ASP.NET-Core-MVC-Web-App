@@ -1,0 +1,32 @@
+﻿@model IEnumerable<NewGeneric.Models.DepartmentViewModel>
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<table class="table table-bordered table-light table-hover" >
+    <thead>
+        <tr>
+            <th class="text-center">Department Id</th>
+            <th class="text-center">Department Name</th>
+            <th class="text-center">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var list in Model)
+        {
+        <tr>
+            <td class="text-center">
+                @list.DId
+            </td>
+            <td class="text-center">
+                @list.DName
+            </td>
+            <td class="text-center">
+                <a href="Update/@list.DId">Update</a> | <a href="Delete/@list.DId">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
